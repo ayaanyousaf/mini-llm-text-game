@@ -1,0 +1,21 @@
+{
+  "COMMANDS": ["look", "move", "take", "use", "talk", "help", "save", "load", "quit"],
+  "LOCKS": { "Inner Sanctum": "temple_key" },
+  "QUEST": {
+    "intro": "You stand before the Temple of the Ancients, said to contain the legendary Black Materia. The spirits warn you that only one who understands sacrifice can claim it."
+  },
+  "END_CONDITIONS": {
+    "WIN_ALL_FLAGS": ["black_materia_obtained"],
+    "LOSE_ANY_FLAGS": ["hp_zero"],
+    "MAX_TURNS": 15
+  },
+  "START": {
+    "location": "Temple Entrance",
+    "inventory": [],
+    "flags": {},
+    "hp": 10,
+    "turns": 0
+  },
+  "INVENTORY_LIMIT": 4,
+  "SFW": true
+}
