@@ -3,19 +3,28 @@ import os
 import json
 from datetime import datetime
 
+# Open the rules JSOn file
 with open('rules.json', 'r') as file:
     rules = json.load(file)
 
+# Define global variables
+MODEL = "gemma:1b" # default lightweight model, recommended to change to 7b/8b model
 state = rules['START'].copy()
 turns = []
 transcript_path = 'samples/transcript.txt'
 
 def save_state(): 
+    """
+    Saves the current state of the game as a JSON file.
+    """
     with open('save.json', 'w') as file:
         json.dump({'state': state, 'turns': turns}, file, indent=2)
     print("Game saved.")
 
 def load_state():
+    """
+    Loads the last saved game state JSON file.
+    """
     global state, turns
     
     with open('save.json', 'r') as file:
@@ -24,6 +33,9 @@ def load_state():
     print("Game loaded.")
 
 def add_to_transcript(role, content):
+    """
+    Adds
+    """
     os.makedirs(os.path.dirname(transcript_path), exist_ok=True)
 
     with open(transcript_path, 'a') as file:
@@ -48,8 +60,8 @@ def call_llm(prompt):
         })}
     ]
 
-    print("\n[DEBUG] Sending to model...")
-    response = ollama.chat(model='gemma3:1b', messages=messages)
+    print("\nSending action to LLM...")
+    response = ollama.chat(model=MODEL, messages=messages)
     text = response['message']['content']
 
     # Clean up the model's response for models with smaller parameters (gemma)
@@ -59,9 +71,6 @@ def call_llm(prompt):
         text = text[text.lower().find("{"):]
 
     text = text.strip().replace(",]", "]").replace(",}", "}")
-
-    # print the raw model reply before parsing
-    print("\n[DEBUG] Raw model output:\n", text, "\n")
 
     try: 
         return json.loads(text)
