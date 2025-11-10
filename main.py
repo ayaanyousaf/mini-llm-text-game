@@ -8,7 +8,7 @@ with open('rules.json', 'r') as file:
     rules = json.load(file)
 
 # Define global variables
-MODEL = "gemma:1b" # default lightweight model, recommended to change to 7b/8b model
+MODEL = "gemma3:1b" # default lightweight model, recommended to change to 7b/8b model
 state = rules['START'].copy()
 turns = []
 transcript_path = 'samples/transcript.txt'
