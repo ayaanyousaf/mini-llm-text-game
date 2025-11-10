@@ -1,0 +1,106 @@
+[2025-11-09 23:13:00] PLAYER:
+look
+
+[2025-11-09 23:13:00] GM:
+{
+  "narration": "The temple air hangs heavy with dust and a chilling stillness.  Sunlight struggles to penetrate the crumbling sandstone ceiling, revealing grotesque carvings of forgotten gods.  A narrow path leads into the temple's heart. You feel a palpable sense of ancient power, and a low, mournful wind whispers through the broken archways.  Ahead, a heavy, iron-bound door blocks your way. It appears to be the Inner Sanctum.  The spirits\u2019 warning echoes in your mind \u2013 a sacrifice is required for the Black Materia.",
+  "state_change": [
+    {
+      "command": "look",
+      "result": "Temple Entrance"
+    },
+    {
+      "command": "move",
+      "direction": "north"
+    },
+    {
+      "command": "take",
+      "item": "iron key"
+    }
+  ],
+  "flags": {
+    "Inner Sanctum": "temple_key"
+  },
+  "hp": 10,
+  "turns": 2,
+  "last_turns": [
+    {
+      "player": "look",
+      "gm": "You stand before the Temple of the Ancients, said to contain the legendary Black Materia. The spirits warn you that only one who understands sacrifice can claim it."
+    },
+    {
+      "player": "talk",
+      "target": "stone statue",
+      "result": "The stone statue grunts and slowly rotates, revealing a small inscription: 'Only the worthy may pass.'"
+    },
+    {
+      "player": "look",
+      "gm": "You feel a palpable sense of ancient power, and a low, mournful wind whispers through the broken archways.  Sunlight struggles to penetrate the crumbling sandstone ceiling, revealing grotesque carvings of forgotten gods.  A narrow path leads into the temple's heart.  Ahead, a heavy, iron-bound door blocks your way. It appears to be the Inner Sanctum."
+    },
+    {
+      "player": "move",
+      "direction": "north"
+    },
+    {
+      "player": "take",
+      "item": "wooden chest"
+    }
+  ],
+  "player_input": "look"
+}
+
+[2025-11-09 23:34:46] PLAYER:
+move
+
+[2025-11-09 23:34:46] GM:
+{
+  "narration": "Game Master encountered an error.",
+  "state_change": []
+}
+
+[2025-11-09 23:35:18] PLAYER:
+move
+
+[2025-11-09 23:35:18] GM:
+{
+  "narration": "The temple air hangs heavy with dust and the scent of ancient stone. Moonlight filters through cracked arches, illuminating faded murals depicting forgotten gods. A sense of profound sadness pervades the space. Before you lies the Entrance, a massive, crumbling doorway.\n\nYou cautiously move forward, your boots crunching on loose gravel.  A faint inscription is etched above a shattered pillar: 'Where shadows dance, the path unfolds.'  To the east, a dark corridor beckons. To the west, a partially collapsed chamber offers a glimpse of a dried-up statue.  A small, tarnished metal token lies on the floor.\n",
+  "state_change": [
+    {
+      "location": "Temple Entrance",
+      "inventory": [
+        "tarnished_token"
+      ]
+    },
+    {
+      "turns": 8,
+      "flags": {
+        "Inner Sanctum": "temple_key"
+      }
+    },
+    {
+      "hp": 10,
+      "turns": 8
+    },
+    {
+      "state": {
+        "location": "Temple Entrance",
+        "inventory": [
+          "tarnished_token"
+        ],
+        "flags": {
+          "Inner Sanctum": "temple_key"
+        }
+      }
+    },
+    {
+      "last_turns": [
+        {
+          "player": "move",
+          "gm": "Game Master encountered an error."
+        }
+      ]
+    }
+  ],
+  "player_input": "look"
+}
+
